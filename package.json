@@ -16,3 +16,15 @@
   }
 }
 ```[span_3](start_span)[span_3](end_span)
+
+5. Scroll down to the bottom and tap **Commit changes**.
+
+---
+
+### Re-Run the Build
+
+As soon as you commit the clean `package.json`, GitHub will automatically start a new build run:
+
+* Tap the **Actions** tab at the top of your repository[span_4](start_span)[span_4](end_span).
+* Tap on the new running workflow (it will have an orange in-progress dot)[span_5](start_span)[span_5](end_span).
+* Once it reaches the green checkmark (~2.5 minutes), scroll to **Artifacts** at the bottom to download your **`Free-PDF-Editor-Debug-APK`**[span_6](start_span)[span_6](end_span).
