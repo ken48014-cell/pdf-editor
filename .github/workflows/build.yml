@@ -27,6 +27,11 @@ jobs:
       - name: Install Node Dependencies
         run: npm install
 
+      - name: Prepare Web Assets
+        run: |
+          mkdir -p www
+          cp index.html www/
+
       - name: Initialize Capacitor Android Platform
         run: |
           npx cap add android
@@ -36,7 +41,7 @@ jobs:
         run: |
           MANIFEST="android/app/src/main/AndroidManifest.xml"
           META_TAG='<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>'
-          sed -i "/<\\/application>/i $META_TAG" $MANIFEST
+          sed -i "/<\/application>/i $META_TAG" $MANIFEST
 
       - name: Build Debug APK
         run: |
