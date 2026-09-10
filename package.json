@@ -1,0 +1,18 @@
+{
+  "name": "free-pdf-editor",
+  "version": "1.0.0",
+  "description": "Cross-platform client-side PDF Editor with AdMob monetization",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "sync": "cap sync",
+    "open:android": "cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/cli": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor-community/admob": "^6.0.0"
+  }
+}
+```[span_3](start_span)[span_3](end_span)
