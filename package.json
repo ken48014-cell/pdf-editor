@@ -1,17 +1,26 @@
 {
   "name": "free-pdf-editor",
-  "version": "1.0.0",
-  "description": "Cross-platform client-side PDF Editor with AdMob monetization",
-  "main": "index.html",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline-first mobile PDF editor built with Vite, PDF.js, pdf-lib and Capacitor.",
   "scripts": {
-    "build": "echo 'Build complete'",
-    "sync": "cap sync",
-    "open:android": "cap open android"
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "sync": "npm run build && cap sync android",
+    "android": "cap open android"
   },
   "dependencies": {
-    "@capacitor/android": "^6.0.0",
-    "@capacitor/cli": "^6.0.0",
-    "@capacitor/core": "^6.0.0",
-    "@capacitor-community/admob": "^6.0.0"
+    "@capacitor-community/admob": "^8.1.0",
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/filesystem": "^8.0.0",
+    "@capacitor/share": "^8.0.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^5.4.296"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.0",
+    "vite": "^7.1.5"
   }
 }
