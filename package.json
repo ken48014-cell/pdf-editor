@@ -15,18 +15,3 @@
     "@capacitor-community/admob": "^6.0.0"
   }
 }
-```[span_4](start_span)[span_4](end_span)
-
-5. Verify that the very last character in the editor is the closing brace **`}`**[span_5](start_span)[span_5](end_span).
-6. Scroll down and tap **Commit changes**.
-
----
-
-### Step 2: Open the New Build Run
-
-When you commit changes, GitHub automatically starts a fresh build with the new code:
-
-1. Tap the **Actions** tab at the top of your repository[span_6](start_span)[span_6](end_span).
-2. Do not re-run build **#1**. In your screenshot, there is already a newer run labeled **Latest #2** at the top right.
-3. Tap on the newest workflow run at the very top of the list[span_7](start_span)[span_7](end_span).
-4. It will run through `Install Node Dependencies` and proceed to generate your APK file[span_8](start_span)[span_8](end_span).
