@@ -1,6 +1,6 @@
 {
   "appId": "com.freepdfeditor.app",
   "appName": "Free PDF Editor",
-  "webDir": ".",
+  "webDir": "www",
   "bundledWebRuntime": false
 }
