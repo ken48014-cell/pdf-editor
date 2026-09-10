@@ -33,10 +33,15 @@ jobs:
       - name: Install Node Dependencies
         run: npm install
 
-      - name: Prepare Web Assets
+      - name: Build Web Application
+        run: npm run build
+
+      - name: Verify Web Assets
         run: |
-          mkdir -p dist
-          cp index.html dist/
+          echo "Checking dist directory..."
+          ls -la dist
+          test -f dist/index.html
+          echo "Web application built successfully."
 
       - name: Initialize Capacitor Android Platform
         run: |
@@ -54,6 +59,10 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon
+
+      - name: Verify APK
+        run: |
+          ls -lh android/app/build/outputs/apk/debug/app-debug.apk
 
       - name: Upload Output APK
         uses: actions/upload-artifact@v4
