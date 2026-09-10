@@ -9,6 +9,7 @@ jobs:
   build:
     name: Compile Android APK
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Source Code
         uses: actions/checkout@v4
@@ -17,6 +18,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+
+      - name: Verify Node.js
+        run: |
+          node --version
+          npm --version
 
       - name: Setup Java JDK 21
         uses: actions/setup-java@v4
@@ -29,8 +36,8 @@ jobs:
 
       - name: Prepare Web Assets
         run: |
-          mkdir -p www
-          cp index.html www/
+          mkdir -p dist
+          cp index.html dist/
 
       - name: Initialize Capacitor Android Platform
         run: |
@@ -41,13 +48,13 @@ jobs:
         run: |
           MANIFEST="android/app/src/main/AndroidManifest.xml"
           META_TAG='<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-3940256099942544~3347511713"/>'
-          sed -i "/<\/application>/i $META_TAG" $MANIFEST
+          sed -i "/<\/application>/i $META_TAG" "$MANIFEST"
 
       - name: Build Debug APK
+        working-directory: android
         run: |
-          cd android
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --no-daemon
 
       - name: Upload Output APK
         uses: actions/upload-artifact@v4
