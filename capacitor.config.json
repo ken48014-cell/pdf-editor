@@ -1,0 +1,9 @@
+{
+  "appId": "com.freepdfeditor.app",
+  "appName": "Free PDF Editor",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  }
+}
